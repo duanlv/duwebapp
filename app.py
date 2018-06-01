@@ -1,42 +1,22 @@
-from flask import Flask
-from datetime import datetime
+from flask import Flask, flash, redirect, render_template, request, session, abort
 app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    return "Hello heroku"
+    return "Flask App!"
 
-@app.route("/hello")
-def hello():
-    return "Hello Word!"
-
-@app.route("/members")
-def member():
-    return "Members"
-
+# @app.route("/hello")
+# def hello():
+#     return "Hello Word!"
+#
+# @app.route("/members")
+# def member():
+#     return "Members"
+#
 @app.route("/members/<string:name>/")
 def getMember(name):
-    return name
+    return render_template(
+        'test.html', name=name)
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
-
-#
-# @app.route("/")
-# def index():
-    # return "index!"
-#
-# @app.route("/hello")
-# def hello():
-    # return "Hello Word!"
-#
-# @app.route("/members")
-# def hello():
-    # return "Members"
-#
-# @app.route("/members/<string:name>/")
-# def getMember(name):
-    # return name
-#
-# if __name__ == "__main__":
-    # app.run()
