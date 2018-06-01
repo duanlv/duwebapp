@@ -11,7 +11,7 @@ def hello():
     return "Hello Word!"
 
 @app.route("/members")
-def hello():
+def member():
     return "Members"
 
 @app.route("/members/<string:name>/")
