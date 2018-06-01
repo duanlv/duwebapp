@@ -9,11 +9,14 @@ def homepage():
 @app.route("/hello")
 def hello():
     return "Hello Word!"
-    
-    # <p>It is currently {time}.</p>
 
-    # <img src="http://loremflickr.com/600/400" />
-    # """.format(time=the_time)
+@app.route("/members")
+def hello():
+    return "Members"
+
+@app.route("/members/<string:name>/")
+def getMember(name):
+    return name
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
