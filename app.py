@@ -4,11 +4,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
+    return "Hello heroku"
 
-    return """
-    <h1>Hello heroku</h1>
-
+@app.route("/hello")
+def hello():
+    return "Hello Word!"
+    
     # <p>It is currently {time}.</p>
 
     # <img src="http://loremflickr.com/600/400" />
